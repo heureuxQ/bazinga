@@ -11,7 +11,7 @@ class TestTable(models.Model):
 
 class ServiceUnitRecord(models.Model):
     id = models.BigIntegerField(primary_key=True, help_text='主键')
-    system_name = models.CharField(max_length=64)
+    system_name = models.CharField(max_length=64, help_text='系统标识')
     service_name = models.CharField(max_length=64, help_text='服务标识')
     service_interface = models.CharField(max_length=64, help_text='服务接口标识')
     total_num = models.IntegerField(help_text='调用总数')
@@ -27,3 +27,17 @@ class ServiceUnitRecord(models.Model):
     end_time = models.DateTimeField(auto_now_add=True, help_text='统计结束时间')
     created_at = models.DateTimeField(auto_now_add=True, help_text='创建时间')
 
+
+class Service(models.Model):
+    id = models.BigIntegerField(primary_key=True, help_text='主键')
+    system_name = models.CharField(max_length=64, help_text='系统标识')
+    service_name = models.CharField(max_length=64, help_text='服务标识')
+    service_interface = models.CharField(max_length=64, help_text='服务接口标识')
+    created_at = models.DateTimeField(auto_now_add=True, help_text='创建时间')
+
+
+class ServiceNameMapper(models.Model):
+    id = models.BigIntegerField(primary_key=True, help_text='主键')
+    original_name = models.CharField(max_length=64, help_text='原始标识')
+    show_name = models.CharField(max_length=64, help_text='展示标识')
+    created_at = models.DateTimeField(auto_now_add=True, help_text='创建时间')

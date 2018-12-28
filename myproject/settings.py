@@ -136,5 +136,5 @@ STATICFILES_DIRS = [
 
 # cron job
 CRONJOBS = [
-    ('*/1 * * * *', 'myapp.cron.query_data', '>C:\\Users\\QuantGroup\\test.log')
+    ('*/1 * * * *', 'myapp.cron.query_data', '/home/quant_group/zipkin_data/logs/cron.log')
 ]

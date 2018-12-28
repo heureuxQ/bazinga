@@ -40,6 +40,12 @@
         <el-table-column prop="name" label="系统" min-width="100">
           <template scope="scope"> {{ scope.row.fields.system_name }} </template>
         </el-table-column>
+        <el-table-column prop="name" label="调用服务" min-width="100">
+          <template scope="scope"> {{ scope.row.fields.service_name }} </template>
+        </el-table-column>
+        <el-table-column prop="name" label="接口名称" min-width="100">
+          <template scope="scope"> {{ scope.row.fields.service_interface }} </template>
+        </el-table-column>
         <el-table-column prop="created_at" label="添加时间" min-width="100">
           <template scope="scope"> {{ scope.row.fields.created_at }} </template>
         </el-table-column>
@@ -86,7 +92,7 @@
           })
       },
       showRecords() {
-        this.axios.get('http://127.0.0.1:8000/api/show_record')
+        this.axios.get('http://127.0.0.1:8000/api/show_record?system_name=支付中心&service_name=资金运营系统')
           .then((response) => {
             var res = response.data
             if (res.error_code == 0) {
