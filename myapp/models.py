@@ -26,6 +26,7 @@ class ServiceUnitRecord(models.Model):
     start_time = models.DateTimeField(auto_now_add=True, help_text='统计开始时间')
     end_time = models.DateTimeField(auto_now_add=True, help_text='统计结束时间')
     created_at = models.DateTimeField(auto_now_add=True, help_text='创建时间')
+    total_delay = 0.0
 
 
 class Service(models.Model):
